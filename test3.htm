@@ -1,0 +1,57 @@
+<html>
+
+ <head>
+ 
+  <style>
+  
+.buttons 
+{
+	float: left; 
+	border:none;
+}
+.buttons label {
+
+	float:right; 
+	width:16px; 
+	height: 16px; 
+	cursor:pointer; 
+	text-indent: -9999px; 
+}
+.buttons:not(:checked) > input { 
+	position:absolute; 
+	top:-9999px; 
+}
+.buttons:not(:checked) > label {
+	background: url('check.png') no-repeat 0 -16px;
+}
+.buttons > input:checked ~ label {
+	width: 16px;
+	height: 16px;
+	background: url('check.png') no-repeat 0 0px;
+}
+.buttons:not(:checked) > label:hover,
+.buttons > input:checked + label:hover,
+.buttons > input:checked + label:hover ~ label,
+.buttons > label:hover ~ input:checked ~ label,
+.buttons:not(:checked) > label:hover ~ label {
+	background: url('check.png') no-repeat 0 0;
+}  
+
+  </style>
+ </head>
+
+<p>
+	<b>Свойства контрол оценки и показа рейтинга</b>
+</p>
+
+<div class="tops1">
+ <fieldset class="buttons">
+ 
+    <input type="radio" id="check5" name="cheks" value="5" /><label for="check5" title="5">5</label>
+    <input type="radio" id="check4" name="cheks" value="4" /><label for="check4" title="4">4</label>
+    <input type="radio" id="check3" name="cheks" value="3" /><label for="check3" title="3">3</label>
+    <input type="radio" id="check2" name="cheks" value="2" /><label for="check2" title="2">2</label>
+    <input type="radio" id="check1" name="cheks" value="1" /><label for="check1" title="1">1</label>
+ </fieldset>
+</div>
+</html>
